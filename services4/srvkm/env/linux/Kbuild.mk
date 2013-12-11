@@ -144,7 +144,6 @@ CFLAGS_sgxreset.o := -Werror
 CFLAGS_sgxutils.o := -Werror
 CFLAGS_sgxkick.o := -Werror
 CFLAGS_sgxtransfer.o := -Werror
-CFLAGS_mmu.o := -Werror
 CFLAGS_pb.o := -Werror
 endif
 
