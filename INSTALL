@@ -20,9 +20,15 @@ DISCIMAGE environment variable, when the make install target is used.
 This should point to the target filesystem.
 $ export DISCIMAGE=/path/to/filesystem
 
-$KERNELDIR
+$KERNELSRC
 When building the SGX DDK kernel module, the build needs access
 to the headers of the Linux kernel
+$ export KERNELSRC=/path/to/kernel
+
+$KERNELDIR
+When building the SGX DDK kernel module, the build needs access
+to the built kernel.  If the kernel is built in-place, then
+$KERNELDIR=$KERNELSRC
 $ export KERNELDIR=/path/to/kernel
 
 $PATH

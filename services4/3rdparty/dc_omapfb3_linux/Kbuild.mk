@@ -41,8 +41,8 @@
 
 ccflags-y += \
 	-I$(TOP)/services4/3rdparty/dc_omapfb3_linux \
-	-I$(KERNELDIR)/drivers/video/omap2 \
-	-I$(KERNELDIR)/arch/arm/plat-omap/include
+	-I$(KERNELSRC)/drivers/video/omap2 \
+	-I$(KERNELSRC)/arch/arm/plat-omap/include
 
 omaplfb-y += \
 	services4/3rdparty/dc_omapfb3_linux/omaplfb_displayclass.o \

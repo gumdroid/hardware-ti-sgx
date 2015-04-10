@@ -19,7 +19,8 @@ ifeq ($(OMAPES),8.x)
 		export EURASIAROOT=$(EURASIAROOT) && \
 		export ANDROID_ROOT=$(ANDROID_ROOT) && \
 		export ARCH=arm && \
-		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=release
+		export KERNELSRC=$(KERNELSRC) && \
+		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) KERNELSRC=$(KERNELSRC) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=release
 	@cp -rf $(GFX_KERNMOD_SRCPATH)/eurasiacon/binary2_omap4430_android_release/target/*.ko $(GRAPHICS_INSTALL_DIR) 
 else ifeq ($(OMAPES),5.x)
 	@echo "building the sgx kernel modules..."
@@ -30,7 +31,8 @@ else ifeq ($(OMAPES),5.x)
 		export EURASIAROOT=$(EURASIAROOT) && \
 		export ANDROID_ROOT=$(ANDROID_ROOT) && \
 		export ARCH=arm && \
-		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=release 
+		export KERNELSRC=$(KERNELSRC) && \
+		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) KERNELSRC=$(KERNELSRC) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=release 
 	@cp -rf $(GFX_KERNMOD_SRCPATH)/eurasiacon/binary2_omap4430_android_release/target/*.ko $(GRAPHICS_INSTALL_DIR) 
 else ifeq ($(OMAPES),9.x)
 	@echo "building the sgx kernel modules..."
@@ -41,7 +43,8 @@ else ifeq ($(OMAPES),9.x)
 		export EURASIAROOT=$(EURASIAROOT) && \
 		export ANDROID_ROOT=$(ANDROID_ROOT) && \
 		export ARCH=arm && \
-		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=$(BUILD)
+		export KERNELSRC=$(KERNELSRC) && \
+		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) KERNELSRC=$(KERNELSRC) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 BUILD=$(BUILD)
 ifeq ($(BUILD),debug)
 	@cp -rf $(GFX_KERNMOD_SRCPATH)/eurasiacon/binary2_omap4430_android_debug/target/*.ko $(GRAPHICS_INSTALL_DIR) 
 else
@@ -71,7 +74,8 @@ cleankernelmodule:
 		export EURASIAROOT=$(EURASIAROOT) && \
 		export DISCIMAGE=$(ANDROID_DISCIMAGE) && \
 		export ANDROID_ROOT=$(ANDROID_ROOT) && \
-		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 clean 
+		export KERNELSRC=$(KERNELSRC) && \
+		make -C $(GFX_KERNMOD_SRCPATH)/eurasiacon/build/linux2/omap4430_android KERNELDIR=$(KERNEL_INSTALL_DIR) KERNELSRC=$(KERNELSRC) TARGET_PRODUCT=$(TARGET_PRODUCT) SGXCORE=530 SGXCOREREV=125 clean 
 
 ############################# INSTALL ##################################
 
