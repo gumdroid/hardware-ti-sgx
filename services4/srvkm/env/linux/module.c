@@ -378,7 +378,7 @@ static int __devinit PVRSRVDriverProbe(LDM_DEV *pDevice, const struct pci_device
  @Description
 
  This call is the opposite of the probe call: it is called when the device is
- being removed from the driver's control.  See the file $KERNELDIR/drivers/
+ being removed from the driver's control.  See the file $KERNELSRC/drivers/
  base/bus.c:device_release_driver() for the call to this function.
 
  This is the correct place to clean up anything our driver did while it was

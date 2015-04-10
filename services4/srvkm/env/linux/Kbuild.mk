@@ -154,7 +154,7 @@ pvrsrvkm-y += \
  services4/srvkm/env/linux/pvr_drm.o
 
 ccflags-y += \
- -I$(KERNELDIR)/include/drm \
+ -I$(KERNELSRC)/include/drm \
  -I$(TOP)/services4/include/env/linux \
 
 ifeq ($(PVR_DRI_DRM_NOT_PCI),1)

@@ -39,16 +39,17 @@
 #   
 ### ###########################################################################
 
+$(if $(KERNELSRC),,$(error KERNELSRC must be set to obtain a version))
 $(if $(KERNELDIR),,$(error KERNELDIR must be set to obtain a version))
 
 override KERNEL_VERSION := \
- $(shell grep "^VERSION = " $(KERNELDIR)/Makefile | cut -f3 -d' ')
+ $(shell grep "^VERSION = " $(KERNELSRC)/Makefile | cut -f3 -d' ')
 override KERNEL_PATCHLEVEL := \
- $(shell grep "^PATCHLEVEL = " $(KERNELDIR)/Makefile | cut -f3 -d' ')
+ $(shell grep "^PATCHLEVEL = " $(KERNELSRC)/Makefile | cut -f3 -d' ')
 override KERNEL_SUBLEVEL := \
- $(shell grep "^SUBLEVEL = " $(KERNELDIR)/Makefile | cut -f3 -d' ')
+ $(shell grep "^SUBLEVEL = " $(KERNELSRC)/Makefile | cut -f3 -d' ')
 override KERNEL_EXTRAVERSION := \
- $(shell grep "^EXTRAVERSION = " $(KERNELDIR)/Makefile | cut -f3 -d' ')
+ $(shell grep "^EXTRAVERSION = " $(KERNELSRC)/Makefile | cut -f3 -d' ')
 
 # Break the kernel version up into a space separated list
 kernel_version_as_list := $(KERNEL_VERSION) \
