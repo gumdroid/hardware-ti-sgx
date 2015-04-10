@@ -64,7 +64,7 @@ ifeq ($(OMAPES),5.x)
 PVR_SYSTEM := omap3
 endif
 
-ifeq ($(OMAPES),4.x)
+ifeq ($(OMAPES),8.x)
 PVR_SYSTEM := ti335x
 endif
 
@@ -116,14 +116,14 @@ SUPPORT_LINUX_USING_WORKQUEUES := 0
 SUPPORT_LINUX_USING_SHARED_WORKQUEUES := 1
 SUPPORT_ACTIVE_POWER_MANAGEMENT := 0
 DISPLAY_CONTROLLER := omaplfb 
-ifeq ($(OMAPES),4.x)
+ifeq ($(OMAPES),8.x)
 DISPLAY_CONTROLLER_COMPONENT := dc_ti335x_linux
 else
 DISPLAY_CONTROLLER_COMPONENT := dc_omapfb3_linux
 endif
 OMAP_NON_FLIP_DISPLAY := 1
 else
-ifeq ($(OMAPES),4.x)
+ifeq ($(OMAPES),8.x)
 DISPLAY_CONTROLLER_COMPONENT := dc_ti335x_linux
 else
 DISPLAY_CONTROLLER_COMPONENT := dc_omapfb3_linux
