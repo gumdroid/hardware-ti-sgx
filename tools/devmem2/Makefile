@@ -47,7 +47,7 @@ ifeq ($(OMAPES),3.x)
 	cp $(PLAT_OBJPATH)/$(OUTNAME) $(GFX_REL_ES3_LIB_SRCPATH_ANDROID)
 endif
 
-ifeq ($(OMAPES),4.x)
+ifeq ($(OMAPES),8.x)
 	@echo "copying devmem2 to $(GFX_REL_ES4_LIB_SRCPATH_ANDROID)"
 	cp $(PLAT_OBJPATH)/$(OUTNAME) $(GFX_REL_ES4_LIB_SRCPATH_ANDROID)
 endif
